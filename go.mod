@@ -5,6 +5,7 @@ go 1.17
 require (
 	github.com/brianvoe/gofakeit/v4 v4.3.0
 	github.com/dgrijalva/jwt-go v3.2.0+incompatible
+	github.com/gabriel-vasile/mimetype v1.4.0
 	github.com/gin-contrib/cors v1.3.1
 	github.com/gin-gonic/gin v1.7.7
 	github.com/go-playground/locales v0.14.0
