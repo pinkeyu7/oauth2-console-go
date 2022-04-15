@@ -45,6 +45,8 @@ func Init() *gin.Engine {
 	r.Use(cors.New(corsConf))
 
 	TokenV1(r, store)
+	OauthClientV1(r, store)
+	OauthScopeV1(r, store)
 
 	return r
 }

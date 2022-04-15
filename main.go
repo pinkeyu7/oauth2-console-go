@@ -14,9 +14,9 @@ import (
 
 var port string
 
-// @title Oauth console API
+// @title Oauth Console API
 // @version 1.0
-// @description Oauth console API
+// @description Oauth Console API
 // @termsOfService https://github.com/pinkeyu7/oauth2-console-go
 // @license.name MIT
 // @license.url
