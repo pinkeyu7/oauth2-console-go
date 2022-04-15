@@ -3,7 +3,6 @@ package service
 import (
 	"oauth2-console-go/config"
 	"oauth2-console-go/driver"
-	_ "oauth2-console-go/driver"
 	"oauth2-console-go/dto/apireq"
 	"oauth2-console-go/dto/model"
 	clientRepo "oauth2-console-go/internal/oauth/client/repository"
