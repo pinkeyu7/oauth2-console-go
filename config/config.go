@@ -1,14 +1,15 @@
 package config
 
 import (
-	"github.com/joho/godotenv"
-	log "github.com/sirupsen/logrus"
 	"os"
 	"path"
 	"path/filepath"
 	"runtime"
 	"strings"
 	"time"
+
+	"github.com/joho/godotenv"
+	log "github.com/sirupsen/logrus"
 )
 
 const (
@@ -70,10 +71,10 @@ func GetCorsRule(origin string) bool {
 
 func InitEnv() {
 	remoteBranch := os.Getenv("REMOTE_BRANCH")
-
 	if remoteBranch == "" {
 		// load env from .env file
-		err := godotenv.Load()
+		path := GetBasePath() + "/.env"
+		err := godotenv.Load(path)
 		if err != nil {
 			log.Panicln(err)
 		}

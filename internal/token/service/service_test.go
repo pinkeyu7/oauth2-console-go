@@ -1,7 +1,6 @@
 package service
 
 import (
-	"log"
 	"net/http"
 	"oauth2-console-go/config"
 	"oauth2-console-go/driver"
@@ -14,7 +13,6 @@ import (
 	"strconv"
 	"testing"
 
-	"github.com/joho/godotenv"
 	"github.com/stretchr/testify/assert"
 
 	_ "github.com/go-sql-driver/mysql"
@@ -27,15 +25,7 @@ func TestMain(m *testing.M) {
 }
 
 func setUp() {
-	remoteBranch := os.Getenv("REMOTE_BRANCH")
-	if remoteBranch == "" {
-		// load env
-		err := godotenv.Load(config.GetBasePath() + "/.env")
-		if err != nil {
-			log.Panicln(err)
-		}
-	}
-
+	config.InitEnv()
 	valider.Init()
 }
 

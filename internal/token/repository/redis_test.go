@@ -1,7 +1,6 @@
 package repository
 
 import (
-	"log"
 	"oauth2-console-go/config"
 	"oauth2-console-go/driver"
 	"oauth2-console-go/pkg/valider"
@@ -9,7 +8,6 @@ import (
 	"testing"
 	"time"
 
-	"github.com/joho/godotenv"
 	"github.com/stretchr/testify/assert"
 )
 
@@ -20,15 +18,7 @@ func TestMain(m *testing.M) {
 }
 
 func setUp() {
-	remoteBranch := os.Getenv("REMOTE_BRANCH")
-	if remoteBranch == "" {
-		// load env
-		err := godotenv.Load(config.GetBasePath() + "/.env")
-		if err != nil {
-			log.Panicln(err)
-		}
-	}
-
+	config.InitEnv()
 	valider.Init()
 }
 

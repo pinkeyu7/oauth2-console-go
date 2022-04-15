@@ -2,7 +2,6 @@ package repository
 
 import (
 	"fmt"
-	"log"
 	"oauth2-console-go/config"
 	"oauth2-console-go/driver"
 	"oauth2-console-go/dto/model"
@@ -11,7 +10,6 @@ import (
 	"testing"
 
 	_ "github.com/go-sql-driver/mysql"
-	"github.com/joho/godotenv"
 	"github.com/stretchr/testify/assert"
 )
 
@@ -22,15 +20,7 @@ func TestMain(m *testing.M) {
 }
 
 func setUp() {
-	remoteBranch := os.Getenv("REMOTE_BRANCH")
-	if remoteBranch == "" {
-		// load env
-		err := godotenv.Load(config.GetBasePath() + "/.env")
-		if err != nil {
-			log.Panicln(err)
-		}
-	}
-
+	config.InitEnv()
 	valider.Init()
 }
 
