@@ -47,6 +47,14 @@ func main() {
 	// Create Sys Account
 	sysAccountSeeds := seed.AllSysAccount()
 	run(engine, sysAccountSeeds)
+
+	// Create Oauth Client
+	oauthClientSeeds := seed.AllOauthClient()
+	run(engine, oauthClientSeeds)
+
+	// Create Oauth Scope
+	oauthScopeSeeds := seed.AllOauthScope()
+	run(engine, oauthScopeSeeds)
 }
 
 func run(engine *xorm.Engine, channelSeeds []seed.Seed) {
